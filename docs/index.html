@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resistores</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+        
+        body{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        .menu{
+            position: absolute;
+            float: left;
+            display: block;
+            width: 20vw;
+            height: 100vh;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+
+        .menu button{
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 12pt;
+            text-transform: uppercase;
+            font-weight: bold;
+            background: #eee;
+            box-shadow: 0 4px 5px  #bbb;
+            color: #333;
+            border: none;
+            margin-bottom: 1em;
+            padding: 1em; 
+            box-sizing: border-box;
+            transition: 0.2s;
+            outline: 0;
+        }
+
+        .menu button:hover{
+            box-shadow: 0 4px 16px  #999;            
+        }
+
+        .menu button:active{
+            background: #ccc;
+        }
+
+        canvas{
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <button>Inserir Dados</button>
+        <button>Calcular tensão total das fontes no circuito</button>
+        <button>Calcular resitência equivalente</button>
+        <button>Calcular tensões nos resistores</button>
+        <button>Calcular correntes nos resistores</button> 
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+<script src="utils.js"></script>
+<script src="app.js"></script>
+</html>

@@ -46,8 +46,31 @@
             box-shadow: 0 4px 16px  #999;            
         }
 
+        .active{
+            background: #2a4 !important;
+            color: #fff !important;
+        }
+
         .menu button:active{
             background: #ccc;
+        }
+
+        h1{
+            font-family: 'Roboto', sans-serif;
+            font-size: 16pt;
+            text-align: center;
+            font-weight: normal;
+            color: #444;
+        }
+
+        label,span{
+            font-family: 'Roboto', sans-serif;
+            font-size: 12pt;
+            color: #666;
+        }
+
+        label{
+            font-weight: bold;
         }
 
         canvas{
@@ -60,14 +83,19 @@
 </head>
 <body>
     <div class="menu">
-        <button onclick='inserirDados()'>Inserir Dados</button>
-        <button>Calcular tensão total das fontes no circuito</button>
-        <button>Calcular resitência equivalente</button>
-        <button>Calcular tensões nos resistores</button>
-        <button>Calcular correntes nos resistores</button> 
+        <button onclick='inserirDados()' id='inserirBaterias'>Inserir Baterias</button>
+        <button onclick='inserirResistores()' id='inserirResistores'>Inserir Resistores</button>
+        <button onclick='calcular()'>Calcular</button>
+
+        <hr>   
+        <h1>Dados do Circuito</h1>
+        <label>Tensão:</label> <span id='tensaoTotal'>0V</span><br>
+        <label>Corrente Total:</label> <span id='corrente'>0A</span><br>
+        <label>Resitência Total:</label> <span id='resTotal'>0Ω</span>
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
 <script src="utils.js"></script>
 <script src="app.js"></script>
+<script src="math.min.js"></script>
 </html>

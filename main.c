@@ -208,11 +208,13 @@ float fillNode(float tensao, int nNos){
 				ramosAdmi[i-1][j-1] = - 1 / ramos[i][j].rEqui; 
 		}
 	}
+
 	for(i = 1; i < nNos - 1; i++){
 		if ((int)ramos[0][i+1].rEqui != 0)
 			ramosAdmi[0][i] = - 1 / ramos[0][i+1].rEqui;
 		ramosAdmi[i][0] = ramosAdmi[0][i];
 	}
+
 	for(i = 1; i < nNos - 1; i++){
 		if ((int)ramos[i + 1][1].rEqui != 0)
 			ramosAdmi[i][0] = ramosAdmi[i][0] - 1 / ramos[i + 1][1].rEqui;
@@ -230,6 +232,8 @@ float fillNode(float tensao, int nNos){
 			}
 		}
 	}
+
+	
 	//Matriz que armazenar� o valor da inversa da matriz
 	float ratio, a;
 	//printf("\nMatriz admitancia:\n");

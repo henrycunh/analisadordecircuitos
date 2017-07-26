@@ -64,33 +64,6 @@ function setup(){
             grid[`${x},${y}`] = (new node(x,y));
         }        
     }
-    batj = JSON.parse('[{"lower_node":{"x":360,"y":160},"upper_node":{"x":360,"y":120},"voltagem":"4"}]');
-    batj.map(bateria_ => {
-        let bat = new bateria();
-        bat.lower_node = bateria_.lower_node;
-        bat.upper_node = bateria_.upper_node;
-        bat.voltagem = bateria_.voltagem;
-        baterias.push(bat);
-    }); 
-    resj = JSON.parse('[{"lower_node":{"x":520,"y":160},"upper_node":{"x":520,"y":120},"resistencia":"4"},{"lower_node":{"x":640,"y":160},"upper_node":{"x":640,"y":120},"resistencia":"8"},{"lower_node":{"x":640,"y":280},"upper_node":{"x":640,"y":240},"resistencia":"7"}]');
-    resj.map(res_ => {
-        let res = new resistor();
-        res.lower_node = res_.lower_node;
-        res.upper_node = res_.upper_node;
-        res.resistencia = res_.resistencia;
-        res.id = resistores.length;
-        resistores.push(res);
-    });
-    linhaj = JSON.parse('[{"startX":360,"startY":160,"endX":520,"endY":160,"canal":{"color":"#000","name":"GND","id":0}},{"startX":360,"startY":120,"endX":600,"endY":40,"canal":{"color":"#f00","name":"VCC","id":1}},{"startX":600,"startY":40,"endX":640,"endY":120,"canal":{"color":"#f00","name":"VCC","id":1}},{"startX":640,"startY":160,"endX":520,"endY":120,"canal":{"color":"#0f0","name":"Canal 1","id":2}},{"startX":640,"startY":160,"endX":640,"endY":240,"canal":{"color":"#0f0","name":"Canal 1","id":2}},{"startX":640,"startY":280,"endX":520,"endY":160,"canal":{"color":"#000","name":"GND","id":0}}]');
-    linhaj.map(mLinha => {
-        let lin = new linha();
-        lin.startX = mLinha.startX;
-        lin.startY = mLinha.startY;
-        lin.endX = mLinha.endX;
-        lin.endY = mLinha.endY;
-        lin.canal = mLinha.canal;
-        linhas.push(lin);
-    });
 }
 
 function draw(){
